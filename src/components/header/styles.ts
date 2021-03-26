@@ -5,7 +5,7 @@ export const Container = styled.header`
   align-items: center;
   margin: 0 auto;
   height: 7rem;
-  padding: 0 30px;
+  padding: 0 1.875rem;
   background: var(--background2);
 `;
 
