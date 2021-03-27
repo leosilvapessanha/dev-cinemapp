@@ -5,28 +5,27 @@ import { api } from '../../services/api';
 import * as S from './styles';
 
 interface IMovie {
+  imdbID: string;
   Title: string;
   Year: string;
   Rated: string;
-  poster: string;
+  Poster: string;
 }
 
 const Dashboard: React.FC = () => {
   const [newMovie, setNewMovie] = useState('');
-  const [movies, setMovies] = useState<IMovie>([]);
+  const [movies, setMovies] = useState<IMovie[]>([]);
 
   async function handleAddMovies(
     event: FormEvent<HTMLFormElement>,
   ): Promise<void> {
     event.preventDefault();
-    console.log('working on');
-
     const response = await api.get<IMovie>(
       `/?${process.env.REACT_APP_API_KEY}&t=${newMovie}`,
     );
-    // console.log(response);
+    console.log(response);
     const movie = response.data;
-    setMovies([...movies, movie)];
+    setMovies([...movies, movie]);
   }
   return (
     <>
@@ -42,16 +41,16 @@ const Dashboard: React.FC = () => {
         <button type="submit">Pesquisar</button>
       </S.Form>
       <S.Movies>
-        <a href="teste">
-          <img
-            src="https://image.freepik.com/fotos-gratis/camera-de-filme-antigo_62754-36.jpg"
-            alt="máquina"
-          />
-          <div>
-            <strong>Máquina</strong>
-            <p>máquina de filmar antiga</p>
-          </div>
-        </a>
+        {movies.map(eachMovie => (
+          <a key={eachMovie.imdbID} href="teste">
+            <img src={eachMovie.Poster} alt="máquina" />
+            <div>
+              <strong>{eachMovie.Title}</strong>
+              <p>{eachMovie.Year}</p>
+              <p>{eachMovie.Rated}</p>
+            </div>
+          </a>
+        ))}
       </S.Movies>
     </>
   );

@@ -77,7 +77,8 @@ export const Movies = styled.div`
     div {
       margin-left: 1rem;
       margin-top: 1rem;
-      /* align-content: center; */
+      flex: 1;
+
       strong {
         color: #000;
       }
