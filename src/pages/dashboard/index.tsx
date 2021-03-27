@@ -12,6 +12,10 @@ interface IMovie {
   Poster: string;
 }
 
+interface ISearch {
+  Search: IMovie[];
+}
+
 const Dashboard: React.FC = () => {
   const [newMovie, setNewMovie] = useState('');
   const [movies, setMovies] = useState<IMovie[]>([]);
@@ -20,12 +24,12 @@ const Dashboard: React.FC = () => {
     event: FormEvent<HTMLFormElement>,
   ): Promise<void> {
     event.preventDefault();
-    const response = await api.get<IMovie>(
-      `/?${process.env.REACT_APP_API_KEY}&t=${newMovie}`,
+    const response = await api.get<ISearch>(
+      `/?${process.env.REACT_APP_API_KEY}&s=${newMovie}`,
     );
     console.log(response);
-    const movie = response.data;
-    setMovies([...movies, movie]);
+    const movie = response.data.Search;
+    setMovies([...movies, ...movie]);
   }
   return (
     <>
