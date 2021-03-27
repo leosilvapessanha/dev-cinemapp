@@ -1,91 +1,94 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
-// export const Container = styled.div`
-//   /* display: flex; */
-//   height: 7rem;
-//   padding: 0 1.875rem;
-// `;
-
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 5rem auto 5rem;
+  align-items: center;
+`;
 export const Title = styled.h1`
   font-size: 3rem;
   color: #f4f4f4;
-  margin-top: 5rem;
   margin-left: 3rem;
   line-height: 5rem;
 `;
 
 export const Form = styled.form`
-  margin-left: 3rem;
   margin-top: 2.5rem;
   max-width: 43.75rem;
   display: flex;
   input {
-    flex: 1;
     height: 4.375rem;
+    width: 20rem;
     padding: 0 1.5rem;
     border: 0;
-    border-radius: 0.3125rem 0 0 0.3125rem;
-    color: #3a3a3a;
+    border-radius: 0.5rem;
+    color: var (--black);
 
     &::placeholder {
-      color: #a8a8b3;
+      color: var(--gray);
     }
   }
   button {
-    width: 13.125rem;
+    width: 7rem;
     height: 4.375rem;
-    background: #04d361;
-    border-radius: 0px 0.3125rem 0.3125rem 0px;
+    background: var(--red);
+    border-radius: 0.5rem;
     border: 0;
-    color: #ffffff;
+    margin-left: 1rem;
+    color: var(--white);
     font-weight: bold;
     transition: background-color 0.2s;
 
     &:hover {
-      background: ${shade(0.2, '#04d361')};
+      background: ${shade(0.2, '#6f1d1b')};
     }
   }
 `;
 
 export const Movies = styled.div`
-  margin-left: 3rem;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  justify-content: center;
+  display: grid;
+  margin-bottom: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15.62rem, auto));
+  grid-gap: 30px 32px;
   margin-top: 80px;
-  max-width: 700px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 
   a {
-    background: #fff;
-    border-radius: 0.3125rem;
+    background: var(--background2);
+    border-radius: 0.5rem;
     width: 100%;
     padding: 1.5rem;
-    display: block;
     text-decoration: none;
-    display: flex;
     align-items: center;
     transition: transform 0.5s;
-    & + a {
-      margin-top: 1.5rem;
-    }
+    height: 100%;
+
     &:hover {
       transform: translateY(-0.625rem);
     }
     img {
-      width: 4rem;
-      height: 4rem;
-      border-radius: 50%;
+      width: 16rem;
+      border-radius: 0.5rem;
     }
     div {
       margin-left: 1rem;
       margin-top: 1rem;
-      flex: 1;
-
-      strong {
-        color: #000;
+      color: var(--white);
+      & > div {
+        color: red;
       }
+
       p {
         font-size: 1.125rem;
-        color: #000;
-        margin-top: 0.25rem;
+        margin: 0.25rem;
       }
     }
   }

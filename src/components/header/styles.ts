@@ -30,7 +30,7 @@ export const Content = styled.div`
   p {
     display: inline;
     font-size: 3.75rem;
-    color: var(--black);
+    color: var(--red);
   }
 `;
 
