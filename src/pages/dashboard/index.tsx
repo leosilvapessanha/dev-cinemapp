@@ -1,5 +1,5 @@
 import React, { useState, FormEvent } from 'react';
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import { AiOutlineHeart } from 'react-icons/ai';
 
 import Header from '../../components/header';
 import { api } from '../../services/api';
@@ -29,7 +29,7 @@ const Dashboard: React.FC = () => {
       `/?${process.env.REACT_APP_API_KEY}&s=${newMovie}`,
     );
     console.log(response);
-    const movie = response.data.Search;
+    const movie = response.data?.Search || [];
     setMovies([...movies, ...movie]);
   }
   return (
