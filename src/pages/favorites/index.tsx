@@ -1,8 +1,11 @@
 import React from 'react';
+// import { AiOutlineHeart } from 'react-icons/ai';
 
 import Header from '../../components/header';
-import { getLocalStorage } from '../../utils/LocalStorage';
-// import { IMovie } from '../dashboard';
+import {
+  deleteInLocalStorage,
+  getLocalStorage,
+} from '../../utils/LocalStorage';
 import * as S from './styles';
 
 const FavoriteMovies: React.FC = () => {
@@ -26,10 +29,12 @@ const FavoriteMovies: React.FC = () => {
             </div>
             <button
               type="button"
-
-              // console.log();
+              onClick={() => {
+                deleteInLocalStorage(eachMovie);
+                console.log(deleteInLocalStorage);
+              }}
             >
-              butão
+              botão
             </button>
           </header>
         ))}

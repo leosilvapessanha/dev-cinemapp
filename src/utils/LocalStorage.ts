@@ -20,3 +20,15 @@ export function addToLocalStorage(data: IMovie): void {
 
   localStorage.setItem('@Movies', JSON.stringify(updatedMovies));
 }
+
+export function deleteInLocalStorage(data: IMovie): void {
+  const movies = getLocalStorage();
+  const movieExists = movies.findIndex(movie => movie.imdbID === data.imdbID);
+  if (movieExists < 0 || -1) {
+    return;
+  }
+  const updatedMovies = [...movies];
+  updatedMovies.splice(1, movieExists);
+
+  localStorage.setItem('@Movies', JSON.stringify(updatedMovies));
+}
