@@ -49,7 +49,7 @@ const Dashboard: React.FC = () => {
       </S.Container>
       <S.Movies>
         {movies.map(eachMovie => (
-          <div key={eachMovie.imdbID}>
+          <header key={eachMovie.imdbID}>
             <img src={eachMovie.Poster} alt={eachMovie.Title} />
             <div>
               <strong>{eachMovie.Title}</strong>
@@ -65,7 +65,7 @@ const Dashboard: React.FC = () => {
             >
               <AiOutlineHeart color="#A30015" align-itens="right" />
             </button>
-          </div>
+          </header>
         ))}
       </S.Movies>
     </>

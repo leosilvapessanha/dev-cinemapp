@@ -1,17 +1,19 @@
 import styled from 'styled-components';
+// import styled from 'styled-components';
 import { shade } from 'polished';
+
+export const Title = styled.h1`
+  font-size: 3rem;
+  color: #f4f4f4;
+  margin-left: 3rem;
+  line-height: 5rem;
+`;
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin: 5rem auto 5rem;
   align-items: center;
-`;
-export const Title = styled.h1`
-  font-size: 3rem;
-  color: #f4f4f4;
-  margin-left: 3rem;
-  line-height: 5rem;
 `;
 
 export const Form = styled.form`
@@ -40,7 +42,6 @@ export const Form = styled.form`
     color: var(--white);
     font-weight: bold;
     transition: background-color 0.2s;
-    align-items: center;
 
     &:hover {
       background: ${shade(0.2, '#6f1d1b')};
@@ -80,7 +81,7 @@ export const Movies = styled.div`
       border-radius: 0.5rem;
     }
     & > div {
-      /* margin-left: 1rem; */
+      margin-left: 1rem;
       margin-top: 1rem;
       color: var(--white);
       & > div {
