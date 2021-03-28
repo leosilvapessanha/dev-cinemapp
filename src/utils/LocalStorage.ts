@@ -24,7 +24,7 @@ export function addToLocalStorage(data: IMovie): void {
 export function deleteInLocalStorage(data: IMovie): void {
   const movies = getLocalStorage();
   const movieExists = movies.findIndex(movie => movie.imdbID === data.imdbID);
-  if (movieExists < 0 || -1) {
+  if (movieExists < 0) {
     return;
   }
   const updatedMovies = [...movies];
