@@ -13,7 +13,7 @@ const FavoriteMovies: React.FC = () => {
   // const data = getLocalStorage();
   console.log(useFavorits());
   const { toggleFavorite, favoriteList } = useFavorits();
-  console.log(favoriteList);
+  // console.log(favoriteList);
 
   return (
     <>
