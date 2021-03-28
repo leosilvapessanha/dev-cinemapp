@@ -27,9 +27,11 @@ const Dashboard: React.FC = () => {
     event: FormEvent<HTMLFormElement>,
   ): Promise<void> {
     event.preventDefault();
-    const response = await api.get<ISearch>(
-      `/?${process.env.REACT_APP_API_KEY}&s=${newMovie}`,
-    );
+    const response = await api.get<ISearch>('/', {
+      params: {
+        s: newMovie,
+      },
+    });
     const movie = response.data?.Search || [];
     setMovies([...movie]);
   }
