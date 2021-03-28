@@ -27,20 +27,19 @@ Para ver a aplicação no ar, clique no link: https://dev-cinemapp-one.vercel.ap
 
  ### Pelo yarn
 ```yarn```
-4. Para iniciar aplicação:
 
- ### inicie pelo npm
-```npm install```
-
- ### Pelo yarn
-```yarn```
+##Inserção de key
 
 Na raiz do programa, crie um arquivo .env, contendo a linha abaixo:
 ``` REACT_APP_API_KEY='925eba28' ```
 
-Esse passo é importante, pois a API key tá escondida como variável local e está no gitignore.
+Esse passo é importante, pois a API key tá escondida como variável local e está no .gitignore.
 
 por último:
 ``` yarn start```
+
+ou
+
+``` npm run start```
 
 Aproveitem :D
