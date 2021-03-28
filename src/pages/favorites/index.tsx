@@ -2,18 +2,12 @@ import React from 'react';
 import { AiFillHeart } from 'react-icons/ai';
 
 import Header from '../../components/header';
-// import {
-//   deleteInLocalStorage,
-//   getLocalStorage,
-// } from '../../utils/LocalStorage';
 import { useFavorits } from '../../hooks/Favorites';
 import * as S from './styles';
 
 const FavoriteMovies: React.FC = () => {
-  // const data = getLocalStorage();
   console.log(useFavorits());
   const { toggleFavorite, favoriteList } = useFavorits();
-  // console.log(favoriteList);
 
   return (
     <>
