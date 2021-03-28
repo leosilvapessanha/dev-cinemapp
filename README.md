@@ -10,7 +10,7 @@
 - Pode ser tipado;
 - A key da API deve estar escondidas.
 
-<!-- para ver o site entre no link:  -->
+para ver o site entre no link: https://dev-cinemapp-one.vercel.app/
 
 ## Passos para instalação
 
