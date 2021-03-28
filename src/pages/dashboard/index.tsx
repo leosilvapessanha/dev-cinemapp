@@ -2,10 +2,11 @@ import React, { useState, FormEvent } from 'react';
 import { AiOutlineHeart } from 'react-icons/ai';
 
 import Header from '../../components/header';
+import { addToLocalStorage } from '../../utils/LocalStorage';
 import { api } from '../../services/api';
 import * as S from './styles';
 
-interface IMovie {
+export interface IMovie {
   imdbID: string;
   Title: string;
   Year: string;
@@ -28,7 +29,6 @@ const Dashboard: React.FC = () => {
     const response = await api.get<ISearch>(
       `/?${process.env.REACT_APP_API_KEY}&s=${newMovie}`,
     );
-    console.log(response);
     const movie = response.data?.Search || [];
     setMovies([...movies, ...movie]);
   }
@@ -49,17 +49,23 @@ const Dashboard: React.FC = () => {
       </S.Container>
       <S.Movies>
         {movies.map(eachMovie => (
-          <a key={eachMovie.imdbID} href="movie">
+          <div key={eachMovie.imdbID}>
             <img src={eachMovie.Poster} alt={eachMovie.Title} />
             <div>
               <strong>{eachMovie.Title}</strong>
               <p>{eachMovie.Year}</p>
               <p>{eachMovie.Rated}</p>
             </div>
-            {/* <div> */}
-            <AiOutlineHeart color="#A30015" align-itens="right" />
-            {/* </div> */}
-          </a>
+            <button
+              type="button"
+              onClick={() => {
+                addToLocalStorage(eachMovie);
+                // console.log();
+              }}
+            >
+              <AiOutlineHeart color="#A30015" align-itens="right" />
+            </button>
+          </div>
         ))}
       </S.Movies>
     </>
