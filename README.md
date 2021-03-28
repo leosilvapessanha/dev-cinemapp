@@ -1,16 +1,18 @@
 # dev-cinemapp
 
 ![TypeScript](https://img.shields.io/badge/-TypeScript-007ACC?style=flat&logoColor=fff&logo=typescript)&nbsp;
-![React-Native](https://img.shields.io/badge/-React_Native-0488B0?style=flat&logoColor=fff&logo=react)&nbsp;
 
-###suposições
+
+## suposições
 
 - O lay-out pode ser mudado de acordo com o que o concorrente acha necessário;
 - A aplicação não necessita de backend;
 - Pode ser tipado;
 - A key da API deve estar escondidas.
 
-##Passos para instalação
+<!-- para ver o site entre no link:  -->
+
+## Passos para instalação
 
  1. Clone o projeto na sua máquina:
 ```git clone ```
@@ -20,17 +22,17 @@
 
 3. instale a dependencia:
 
- ###Pelo npm
+ ### Pelo npm
 ```npm install```
 
- ###Pelo yarn
+ ### Pelo yarn
 ```yarn```
 4. Para iniciar aplicação:
 
- ###inicie pelo npm
+ ### inicie pelo npm
 ```npm install```
 
- ###Pelo yarn
+ ### Pelo yarn
 ```yarn```
 
 Na raiz do programa, crie um arquivo .env, contendo a linha abaixo:
