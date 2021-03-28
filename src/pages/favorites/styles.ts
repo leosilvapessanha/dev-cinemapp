@@ -92,5 +92,9 @@ export const Movies = styled.div`
         margin: 0.25rem;
       }
     }
+    button {
+      background-color: transparent;
+      border: none;
+    }
   }
 `;

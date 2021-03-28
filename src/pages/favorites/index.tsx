@@ -1,16 +1,19 @@
 import React from 'react';
-// import { AiOutlineHeart } from 'react-icons/ai';
+import { AiFillHeart } from 'react-icons/ai';
 
 import Header from '../../components/header';
-import {
-  deleteInLocalStorage,
-  getLocalStorage,
-} from '../../utils/LocalStorage';
+// import {
+//   deleteInLocalStorage,
+//   getLocalStorage,
+// } from '../../utils/LocalStorage';
+import { useFavorits } from '../../hooks/Favorites';
 import * as S from './styles';
 
 const FavoriteMovies: React.FC = () => {
-  const data = getLocalStorage();
-  console.log(data);
+  // const data = getLocalStorage();
+  console.log(useFavorits());
+  const { toggleFavorite, favoriteList } = useFavorits();
+  console.log(favoriteList);
 
   return (
     <>
@@ -19,7 +22,7 @@ const FavoriteMovies: React.FC = () => {
         <S.Title>Você tem tantos filmes fantásticos para ver...</S.Title>
       </S.Container>
       <S.Movies>
-        {data.map(eachMovie => (
+        {favoriteList.map(eachMovie => (
           <header key={eachMovie.imdbID}>
             <img src={eachMovie.Poster} alt={eachMovie.Title} />
             <div>
@@ -30,11 +33,10 @@ const FavoriteMovies: React.FC = () => {
             <button
               type="button"
               onClick={() => {
-                deleteInLocalStorage(eachMovie);
-                console.log(deleteInLocalStorage);
+                toggleFavorite(eachMovie);
               }}
             >
-              botão
+              <AiFillHeart color="#A30015" align-itens="right" />
             </button>
           </header>
         ))}

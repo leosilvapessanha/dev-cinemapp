@@ -62,7 +62,7 @@ export const Movies = styled.div`
   justify-content: center;
   align-items: center;
 
-  header {
+  section {
     background: var(--background2);
     border-radius: 0.5rem;
     width: 100%;
@@ -91,6 +91,10 @@ export const Movies = styled.div`
         font-size: 1.125rem;
         margin: 0.25rem;
       }
+    }
+    button {
+      background-color: transparent;
+      border: none;
     }
   }
 `;
